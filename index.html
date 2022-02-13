@@ -15,11 +15,18 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            flex-direction: column;
+        }
+        #h2{
+            position: absolute;
+            color: black;
+            text-align: center;
         }
     </style>
 </head>
 <body>
     <section>
+        <h2 id="h2">Loading....</h2>
         <video id="video" autoplay style="display: none;"></video>
         <canvas id="canvas" width="600px" height="400px"></canvas>
     </section>

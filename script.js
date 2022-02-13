@@ -1,9 +1,11 @@
 let video = document.getElementById('video');
+let h2 = document.getElementById('h2');
 let model;
 let canvas = document.getElementById('canvas');
 let ctx = canvas.getContext("2d")
 
 const setUpCamera = () => {
+    
     navigator.mediaDevices.getUserMedia({
         video: { width: 600, height: 400 },
         audio: false,
@@ -39,6 +41,7 @@ const detectFaces = async () => {
 setUpCamera();
 
 video.addEventListener("loadeddata", async () => {
+    h2.innerHTML = "";
     model = await blazeface.load();
     setInterval(detectFaces, 40);
 })
